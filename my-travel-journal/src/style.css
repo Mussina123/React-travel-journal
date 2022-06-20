@@ -51,6 +51,7 @@ body {
   letter-spacing: 0.17em;
   color: #2B283A;
   margin: 1%;
+  text-transform: uppercase;
 }
 
 .google-text {

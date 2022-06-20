@@ -11,7 +11,7 @@ export default function MainContent(props) {
                 </div> 
                 <section className="section-main">
                     <img src= {LocationLogo} alt='location-logo' /> 
-                    <span className="location-text">{props.item.location}</span><a href = {props.item.googleMapsUrl}> <span className="google-text"> View on Google Maps</span></a>
+                    <span className="location-text">{props.item.location}</span><a href = {props.item.googleMapsUrl} target = '_blank' rel="noreferrer" > <span className="google-text"> View on Google Maps</span></a>
                     <h1>{props.item.title}</h1> 
                     <h4>{props.item.startDate} - {props.item.endDate}</h4>
                     <p>{props.item.description}</p>
