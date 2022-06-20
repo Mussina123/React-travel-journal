@@ -1,21 +1,51 @@
 import React from "react";
 import LocationLogo from '../images/location-logo.png'
 
-export default function MainContent() {
+export default function MainContent(props) {
+    console.log(props)
     return(
         <div className="Main-content-container">
            <div className="main-content-section">
                 <div className="img-container">
-                    <img class='main-img' src="https://source.unsplash.com/WLxQvbMyfas" alt= 'main-logo'/>
+                    <img class='main-img' src= {props.item.imageUrl} alt= 'main-logo'/>
                 </div> 
                 <section className="section-main">
                     <img src= {LocationLogo} alt='location-logo' /> 
-                    <span className="location-text">JAPAN</span><span className="google-text">View on Google Maps</span>
-                    <h1>Mount Fuji</h1> 
-                    <h4>12 Jan, 2021 - 24 Jan, 2021</h4>
-                    <p>Mount Fuji is the tallest mountain in Japan, standing at 3,776 meters (12,380 feet). Mount Fuji is the single most popular tourist site in Japan, for both Japanese and foreign tourists.</p>
+                    <span className="location-text">{props.item.location}</span><a href = {props.item.googleMapsUrl}> <span className="google-text"> View on Google Maps</span></a>
+                    <h1>{props.item.title}</h1> 
+                    <h4>{props.item.startDate} - {props.item.endDate}</h4>
+                    <p>{props.item.description}</p>
                      </section>
            </div>
         </div>
     ) 
 }
+
+// import React from 'react'
+// import Star from '../images/Star.png'
+
+
+// export default function Card(props) {
+//     console.log(props)
+
+//     let badgeText 
+//     if (props.item.openSpots === 0){
+//         badgeText = 'SOLD OUT'
+//     } else if (props.item.location === "Online"){
+//         badgeText = 'ONLINE'
+//     }
+//     return (
+//         <div className="card">
+//             {badgeText && <div className='card--badge'> {badgeText} </div> }
+//             <img src = {props.item.coverImg} className="card--image" alt='Main-pic'/>
+//             <div className="card--stats">
+//                 <img src={Star} className="card--star" alt ='star'/>
+//                 <span>{props.item.stats.rating} </span>
+//                 <span className="gray">  ({props.item.stats.reviewCount}) • </span>
+//                 <span className="gray">{props.item.location} .</span>
+//             </div>
+//             <p>{props.item.title}</p>
+//             <p> <span className="bold"> From ${props.item.price}</span> / person</p>
+//         </div>
+//     )
+// } 
